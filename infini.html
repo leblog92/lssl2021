@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title> LSSL 2021</title>
+<link rel="icon" type="image/png" href="https://static.thenounproject.com/png/375110-200.png" />
+<style>
+*{
+box-sizing:border-box;
+}
+
+html,body{
+height:100%;
+margin:0;
+}
+
+body{
+font-family:consolas;
+color:white;
+}
+
+#tit{
+text-align:center;
+width:100%;
+position:fixed;
+top:2.5%;
+font-size:40px;
+}
+
+#myVideo{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+}
+
+.container{
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+height:85%;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-gap:5%;
+}
+
+.container div{
+text-align:center;
+vertical-align:middle;
+}
+
+.container img{
+border:10px solid #ccc;
+}
+
+#arrow{
+
+}
+
+img{
+border-radius: 50%;
+-webkit-transition: -webkit-transform .8s ease-in-out;
+		transition:         transform .8s ease-in-out;
+}
+img:hover{
+-webkit-transform: rotate(360deg) scale(1.5);
+		transform: rotate(360deg) scale(1.5);
+}
+
+[data-title]:hover:after{
+opacity: 0.5;
+transition: all 0.1s ease 0.5s;
+visibility: visible;
+}
+
+[data-title]:after{
+content: attr(data-title);
+position: absolute;
+bottom: -1.6em;
+left: 100%;
+padding: 4px 4px 4px 8px;
+color: #666;
+white-space: nowrap;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-shadow: 0px 0px 4px #666;
+-webkit-box-shadow: 0px 0px 4px #666;
+box-shadow: 0px 0px 4px #666;
+background-image: -moz-linear-gradient(top, #f0eded, #bfbdbd);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0eded), color-stop(1, #bfbdbd));
+background-image: -webkit-linear-gradient(top, #f0eded, #bfbdbd);
+background-image: -moz-linear-gradient(top, #f0eded, #bfbdbd);
+background-image: -ms-linear-gradient(top, #f0eded, #bfbdbd);
+background-image: -o-linear-gradient(top, #f0eded, #bfbdbd);
+opacity: 0;
+z-index: 99999;
+visibility: hidden;
+}
+
+[data-title]{
+position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop id="myVideo">
+<source src="fract.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+
+<div id="tit">Infiniment Grand & Infiniment Petit</div>
+
+<div class="container">
+<div><a href="https://htwins.net/scale2/" target="_blank" title="Zoomez du bord de l'univers à la limite quantique de l'espace-temps et apprenez l'échelle des choses en cours de route !"><img src="echelle.jpg" width="150px" height="auto"></a></div></a>
+<div><a href="https://www.youtube.com/watch?v=yBNtJN9j2_I" target="_blank"><img src="petit.jpg" width="150px" height="auto"></a></div>
+<div><a href="https://www.youtube.com/watch?v=MuARMr63Yoc" target="_blank"><img src="grand.jpg" width="150px" height="auto"></a></div>
+<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
+<div><a href="http://gigapan.com/" target="_blank"><img src="giga.png" width="150px" height="auto"></a></div>
+<div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
+<div><a href="https://www.youtube.com/watch?reload=9&v=zdl6N42q2m0" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
+<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>
+<!--<div><img src="museum.jpg" width="150px" height="auto"></div>
+<div><img src="museum.jpg" width="150px" height="auto"></div>
+<div><img src="museum.jpg" width="150px" height="auto"></div>
+<div><img src="museum.jpg" width="150px" height="auto"></div>-->
+</div>
+
+<script>
+var video=document.getElementById("myVideo");
+video.play();
+</script>
+</body>
+</html>
