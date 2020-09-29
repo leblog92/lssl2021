@@ -70,47 +70,33 @@ img:hover{
 		transform: rotate(360deg) scale(1.5);
 }
 
-[data-title]:hover:after{
-opacity: 0.5;
-transition: all 0.1s ease 0.5s;
-visibility: visible;
-}
-
-[data-title]:after{
-content: attr(data-title);
-position: absolute;
-bottom: -1.6em;
-left: 100%;
-padding: 4px 4px 4px 8px;
-color: #666;
-white-space: nowrap;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
--moz-box-shadow: 0px 0px 4px #666;
--webkit-box-shadow: 0px 0px 4px #666;
-box-shadow: 0px 0px 4px #666;
-background-image: -moz-linear-gradient(top, #f0eded, #bfbdbd);
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0eded), color-stop(1, #bfbdbd));
-background-image: -webkit-linear-gradient(top, #f0eded, #bfbdbd);
-background-image: -moz-linear-gradient(top, #f0eded, #bfbdbd);
-background-image: -ms-linear-gradient(top, #f0eded, #bfbdbd);
-background-image: -o-linear-gradient(top, #f0eded, #bfbdbd);
-opacity: 0;
-z-index: 99999;
-visibility: hidden;
-}
-
-[data-title]{
-position: relative;
-}
 </style>
 </head>
 
 <body>
 
-<video autoplay muted loop id="myVideo">
+<video autoplay muted loop id="myVideo1">
 <source src="fract1.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+
+<video autoplay muted loop id="myVideo2">
+<source src="fract2.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+
+<video autoplay muted loop id="myVideo3">
+<source src="fract3.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+
+<video autoplay muted loop id="myVideo4">
+<source src="fract4.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+
+<video autoplay muted loop id="myVideo5">
+<source src="fract5.mp4" type="video/mp4">
 Your browser does not support HTML5 video.
 </video>
 
@@ -125,14 +111,15 @@ Your browser does not support HTML5 video.
 <div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
 <div><a href="https://www.youtube.com/watch?reload=9&v=zdl6N42q2m0" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
 <div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>
+<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
 <!--<div><img src="museum.jpg" width="150px" height="auto"></div>
-<div><img src="museum.jpg" width="150px" height="auto"></div>
 <div><img src="museum.jpg" width="150px" height="auto"></div>
 <div><img src="museum.jpg" width="150px" height="auto"></div>-->
 </div>
 
 <script>
-var video=document.getElementById("myVideo");
+var r=Math.round(Math.random()*4)+1;
+var video=document.getElementById("myVideo"+r);
 video.play();
 </script>
 </body>
