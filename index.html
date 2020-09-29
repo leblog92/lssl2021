@@ -75,28 +75,8 @@ img:hover{
 
 <body>
 
-<video autoplay muted loop id="myVideo1">
-<source src="fract1.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-
-<video autoplay muted loop id="myVideo2">
+<video autoplay muted loop id="myVideo">
 <source src="fract2.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-
-<video autoplay muted loop id="myVideo3">
-<source src="fract3.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-
-<video autoplay muted loop id="myVideo4">
-<source src="fract4.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-
-<video autoplay muted loop id="myVideo5">
-<source src="fract5.mp4" type="video/mp4">
 Your browser does not support HTML5 video.
 </video>
 
@@ -119,7 +99,7 @@ Your browser does not support HTML5 video.
 
 <script>
 var r=Math.round(Math.random()*4)+1;
-var video=document.getElementById("myVideo"+r);
+var video=document.getElementById("myVideo");
 video.play();
 </script>
 </body>
