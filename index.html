@@ -60,47 +60,95 @@ border:10px solid #ccc;
 
 }
 
-img{
+.container img{
 border-radius: 50%;
 -webkit-transition: -webkit-transform .8s ease-in-out;
 transition:transform .8s ease-in-out;
 }
-img:hover{
+.container img:hover{
 -webkit-transform: rotate(360deg) scale(1.5);
-		transform: rotate(360deg) scale(1.5);
+transform: rotate(360deg) scale(1.5);
 }
 
+.overlay{
+overflow:hidden;
+position:fixed;
+top:0;
+left:0;
+height:100%;
+background-color: rgba(0,0,0, 0.9);
+transition: 0.5s;
+}
+
+#Ech{
+width:0%;
+}
+
+.overlay-content{
+position: relative;
+top: 25%;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+}
+
+.overlay .closebtn{
+position:absolute;
+top:20px;
+right:45px;
+font-size:60px;
+}
+
+.overlay a{
+padding:8px;
+text-decoration:none;
+font-size:36px;
+color:#818181;
+display:block;
+transition:0.3s;
+}
 </style>
 </head>
 
 <body>
 
 <video autoplay muted loop id="myVideo">
-<source src="fract2.mp4" type="video/mp4">
+<source src="fract0.mp4" type="video/mp4">
 Your browser does not support HTML5 video.
 </video>
 
 <div id="tit">Infiniment Grand & Infiniment Petit</div>
 
 <div class="container">
-<div><a href="https://htwins.net/scale2/" target="_blank" title="Zoomez du bord de l'univers à la limite quantique de l'espace-temps et apprenez l'échelle des choses en cours de route !"><img src="echelle.jpg" width="150px" height="auto"></a></div></a>
-<div><a href="https://www.youtube.com/watch?v=yBNtJN9j2_I" target="_blank"><img src="petit.jpg" width="150px" height="auto"></a></div>
-<div><a href="https://www.youtube.com/watch?v=MuARMr63Yoc" target="_blank"><img src="grand.jpg" width="150px" height="auto"></a></div>
-<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
-<div><a href="http://gigapan.com/" target="_blank"><img src="giga.png" width="150px" height="auto"></a></div>
-<div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
-<div><a href="https://www.youtube.com/watch?reload=9&v=zdl6N42q2m0" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
-<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>
-<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
-<!--<div><img src="museum.jpg" width="150px" height="auto"></div>
-<div><img src="museum.jpg" width="150px" height="auto"></div>
-<div><img src="museum.jpg" width="150px" height="auto"></div>-->
+	<div onclick="openEch()"><img src="echelle.jpg" width="150px" height="auto"></a></div>
+	<div><a href="https://www.youtube.com/watch?v=yBNtJN9j2_I" target="_blank"><img src="petit.jpg" width="150px" height="auto"></a></div>
+	<div><a href="https://www.youtube.com/watch?v=MuARMr63Yoc" target="_blank"><img src="grand.jpg" width="150px" height="auto"></a></div>
+	<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
+	<div><a href="http://gigapan.com/" target="_blank"><img src="giga.png" width="150px" height="auto"></a></div>
+	<div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
+	<div><a href="https://www.youtube.com/watch?v=lAR3rry4Hjo" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
+	<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac3d.jpg" width="150px" height="auto"></a></div>
+	<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>
+</div>
+
+<div id="Ech" class="overlay">
+<div class="overlay-content">
+<a href="https://htwins.net/scale2/" target="_blank"><img src="https://i.pinimg.com/originals/f3/17/df/f317dfde552c0fdc1d0143fdee483bff.jpg" width="400px" height="auto" padding-top="20px"/><br>L'échelle de l'Univers</a>Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>et apprenez l'échelle des choses en cours de route 
+</div>
+<a href="javascript:void(0)" class="closebtn" onclick="closeEch()">&times;</a>
 </div>
 
 <script>
-var r=Math.round(Math.random()*4)+1;
 var video=document.getElementById("myVideo");
 video.play();
+
+function openEch(){
+document.getElementById("Ech").style.width="100%";
+}
+function closeEch(){
+document.getElementById("Ech").style.width="0%";
+}
+
 </script>
 </body>
 </html>
