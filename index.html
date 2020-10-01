@@ -17,6 +17,7 @@ margin:0;
 body{
 font-family:consolas;
 color:white;
+background-color:#000;
 }
 
 #tit{
@@ -62,7 +63,7 @@ border-radius: 50%;
 transition:transform .8s ease-in-out;
 }
 .container img:hover{
--webkit-transform: rotate(360deg) scale(1.5);
+-webkit-transform: rotate(360deg) scale(1.8);
 transform: rotate(360deg) scale(1.5);
 }
 
@@ -76,17 +77,11 @@ background-color: rgba(0,0,0, 0.9);
 transition: 0.5s;
 }
 
-#Ech{
-width:0%;
-}
+#Ech{width:0%;}
+#InfP{width:0%;}
+#InfG{width:0%;}
+#Giga{width:0%;}
 
-#InfP{
-width:0%;
-}
-
-#InfG{
-width:0%;
-}
 .overlay-content{
 position:relative;
 top:10%;
@@ -123,35 +118,58 @@ transition:0.3s;
 	<div onclick="openEch()"><img src="echelle.jpg" width="150px" height="auto"></a></div>
 	<div onclick="openInfP()"><img src="petit.jpg" width="150px" height="auto"></div>
 	<div onclick="openInfG()"><img src="grand.jpg" width="150px" height="auto"></div>
-	<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
-	<div><a href="http://gigapan.com/" target="_blank"><img src="giga.png" width="150px" height="auto"></a></div>
+	<div onclick="openGiga()"><img src="giga.png" width="150px" height="auto"></div>
 	<div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
 	<div><a href="https://www.youtube.com/watch?v=lAR3rry4Hjo" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
+	<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
 	<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac3d.jpg" width="150px" height="auto"></a></div>
 	<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>
 </div>
 
 <div id="Ech" class="overlay">
 <div class="overlay-content">
-<a href="https://htwins.net/scale2/" target="_blank"><img src="https://i.gifer.com/SUk4.gif" width="800px" height="auto" padding-top="20px"/><br>L'échelle de l'Univers</a>Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>et apprenez l'échelle des choses en cours de route. 
+	<a href="https://htwins.net/scale2/" target="_blank">
+		<img src="https://i.gifer.com/SUk4.gif" width="800px" height="auto"/><br>
+		L'échelle de l'Univers
+	</a>
+	Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>
+	et apprenez l'échelle des choses en cours de route. 
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeEch()">&times;</a>
 </div>
 
 <div id="InfP" class="overlay">
 <div class="overlay-content">
-<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/yBNtJN9j2_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Si en levant les yeux au ciel il vous arrive de vous sentir petit, écrasé par le poids de l'immensité<br>alors dites vous qu'il existe là à proximité, un monde qui fait de vous de véritables géants ...
+	<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/yBNtJN9j2_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+	Si en levant les yeux au ciel il vous arrive de vous sentir petit, écrasé par le poids de l'immensité<br>
+	alors dites vous qu'il existe là à proximité, un monde qui fait de vous de véritables géants ...
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeInfP()">&times;</a>
 </div>
-
+	
 <div id="InfG" class="overlay">
 <div class="overlay-content">
-<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/MuARMr63Yoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Ouvrez grands les yeux aujourd'hui, nous allons entreprendre un voyage aux confins de l'univers connu<br>et aussi loin qu'il est possible d'aller ...
+	<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/MuARMr63Yoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+	Ouvrez grands les yeux aujourd'hui, nous allons entreprendre un voyage aux confins de l'univers connu<br>
+	aussi loin qu'il est possible d'aller ...
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeInfG()">&times;</a>
 </div>
 
+<div id="Giga" class="overlay">
+<div class="overlay-content">
+	<a href="https://gigapan.com/" target="_blank">
+		<img src="https://i.gifer.com/SUk4.gif" width="800px" height="auto"/><br>
+		Gigapan
+	</a>
+	GigaPan est un projet collaboratif entre la Carnegie Mellon University et l'Ames Research Center de la NASA,<br>
+	avec le support de Google. L'objectif est de faciliter le développement de photos panoramiques composites à haute résolution.
+</div>
+<a href="javascript:void(0)" class="closebtn" onclick="closeGiga()">&times;</a>
+</div>
+		
+		
+		
 <script>
 var vidElement=document.getElementById('myVideo');
 var vidSources=["fract0.mp4","fract1.mp4","fract2.mp4","fract3.mp4","fract4.mp4","fract5.mp4"];
@@ -182,6 +200,9 @@ function closeInfP(){document.getElementById("InfP").style.width="0%";}
 
 function openInfG(){document.getElementById("InfG").style.width="100%";}
 function closeInfG(){document.getElementById("InfG").style.width="0%";}
+
+function openGiga(){document.getElementById("Giga").style.width="100%";}
+function closeGiga(){document.getElementById("Giga").style.width="0%";}
 </script>
 </body>
 </html>
