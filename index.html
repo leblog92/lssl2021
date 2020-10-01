@@ -115,10 +115,7 @@ transition:0.3s;
 
 <body>
 
-<video autoplay muted loop id="myVideo">
-<source src="fract0.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
+<video autoplay muted loop id="myVideo">Your browser does not support HTML5 video.</video>
 
 <div id="tit">Infiniment Petit & Infiniment Grand</div>
 
@@ -136,26 +133,45 @@ Your browser does not support HTML5 video.
 
 <div id="Ech" class="overlay">
 <div class="overlay-content">
-<a href="https://htwins.net/scale2/" target="_blank"><img src="https://i.gifer.com/SUk4.gif" width="400px" height="auto" padding-top="20px"/><br>L'échelle de l'Univers</a>Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>et apprenez l'échelle des choses en cours de route. 
+<a href="https://htwins.net/scale2/" target="_blank"><img src="https://i.gifer.com/SUk4.gif" width="800px" height="auto" padding-top="20px"/><br>L'échelle de l'Univers</a>Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>et apprenez l'échelle des choses en cours de route. 
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeEch()">&times;</a>
 </div>
-	
+
 <div id="InfP" class="overlay">
 <div class="overlay-content">
-<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/yBNtJN9j2_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Si en levant les yeux au ciel il vous arrive de vous sentire petit, écrasé ?<br>Alors dites vous qu'il existe, là à proximité, un monde qui fait de vous de véritables géants...
+<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/yBNtJN9j2_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Si en levant les yeux au ciel il vous arrive de vous sentir petit, écrasé par le poids de l'immensité<br>alors dites vous qu'il existe là à proximité, un monde qui fait de vous de véritables géants ...
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeInfP()">&times;</a>
 </div>
 
 <div id="InfG" class="overlay">
 <div class="overlay-content">
-<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/MuARMr63Yoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Si en levant les yeux au ciel il vous arrive de vous sentire petit, écrasé ?<br>Alors dites vous qu'il existe, là à proximité, un monde qui fait de vous de véritables géants...
+<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/MuARMr63Yoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>Ouvrez grands les yeux aujourd'hui, nous allons entreprendre un voyage aux confins de l'univers connu<br>et aussi loin qu'il est possible d'aller ...
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeInfG()">&times;</a>
 </div>
-	
+
 <script>
+
+var vidElement=document.getElementById('myVideo');
+var vidSources=["fract0.mp4","fract1.mp4","fract2.mp4","fract3.mp4","fract4.mp4","fract5.mp4"];
+var activeVideo=Math.floor((Math.random()*vidSources.length));
+vidElement.src = vidSources[activeVideo];
+
+vidElement.addEventListener('ended', function(e){
+
+// update the active video index
+activeVideo=(++activeVideo) % vidSources.length;
+if(activeVideo===vidSources.length){
+activeVideo=0;
+}
+
+// update the video source and play
+vidElement.src=vidSources[activeVideo];
+vidElement.play();
+});
+
 var video=document.getElementById("myVideo");
 video.play();
 
@@ -164,7 +180,7 @@ function closeEch(){document.getElementById("Ech").style.width="0%";}
 
 function openInfP(){document.getElementById("InfP").style.width="100%";}
 function closeInfP(){document.getElementById("InfP").style.width="0%";}
-	
+
 function openInfG(){document.getElementById("InfG").style.width="100%";}
 function closeInfG(){document.getElementById("InfG").style.width="0%";}
 </script>
