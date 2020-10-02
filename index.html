@@ -81,6 +81,8 @@ transition: 0.5s;
 #InfP{width:0%;}
 #InfG{width:0%;}
 #Giga{width:0%;}
+#Nik{width:0%;}
+#Mus{width:0%;}
 
 .overlay-content{
 position:relative;
@@ -123,8 +125,8 @@ color:#f1f1f1;
 	<div onclick="openInfP()"><img src="petit.jpg" width="150px" height="auto"></div>
 	<div onclick="openInfG()"><img src="grand.jpg" width="150px" height="auto"></div>
 	<div onclick="openGiga()"><img src="giga.png" width="150px" height="auto"></div>
-	<div><a href="https://www.nikonsmallworld.com//" target="_blank"><img src="nikon.jpg" width="150px" height="auto"></a></div>
-	<div><a href="https://www.youtube.com/watch?v=lAR3rry4Hjo" target="blank"><img src="museum.jpg" width="150px" height="auto"></a></div>
+	<div onclick="openNik()"><img src="nikon.jpg" width="150px" height="auto"></div>
+	<div onclick="openMus()"><img src="museum.jpg" width="150px" height="auto"></div>
 	<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
 	<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac3d.jpg" width="150px" height="auto"></a></div>
 	<!--<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>-->
@@ -163,17 +165,39 @@ color:#f1f1f1;
 <div id="Giga" class="overlay">
 <div class="overlay-content">
 	<a href="https://gigapan.com/" target="_blank">
-		<img src="https://raw.githubusercontent.com/leblog92/lssl2021/master/gigapan.gif"" width="800px" height="auto"/><br>
+		<img src="https://raw.githubusercontent.com/leblog92/lssl2021/master/gigapan.gif" width="800px" height="auto"/><br>
 		Gigapan
 	</a>
 	GigaPan est un projet collaboratif entre la Carnegie Mellon University et l'<a href="https://fr.wikipedia.org/wiki/Ames_Research_Center" style="padding:0px;font-size:15px;color:#fff;display:inline;" target="_blank">Ames Research Center</a> de la NASA,<br>
 	avec le support de Google. L'objectif est de faciliter le développement de photos panoramiques composites à haute résolution.
 </div>
 <a href="javascript:void(0)" class="closebtn" onclick="closeGiga()">&times;</a>
+
+<div id="Nik" class="overlay">
+<div class="overlay-content">
+	<a href="https://www.nikonsmallworld.com//" target="_blank">
+		<img src="https://cdn.mos.cms.futurecdn.net/RC2iy7FSBix6g9JjXSs8yA.gif" width="800px" height="auto"/><br>
+		Nikon's Small World
+	</a>
+	Le petit monde de Nikon est considéré comme le principal forum pour présenter la beauté et la complexité<br>
+	de la vie vue au microscope optique. Le  concours de photomicrographie  est ouvert à toute personne<br>
+	intéressée par la microscopie et la photographie. Le concours vidéo, intitulé  Small World In Motion,<br>
+	englobe tout film ou photographie numérique en accéléré prise au microscope.
 </div>
-		
-		
-		
+<a href="javascript:void(0)" class="closebtn" onclick="closeNik()">&times;</a>
+
+<div id="Mus" class="overlay">
+<div class="overlay-content">
+	<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/lAR3rry4Hjo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+	"Museum of Simulation Technology" s'inspire de la perspective forcée pour permettre au joueur<br>
+	d'explorer le monde en manipulant des objets dans un espace physique basé sur leur angle de vue.<br>
+	Pourez-vous faire tenir la lune dans la paume de votre main ?
+</div>
+<a href="javascript:void(0)" class="closebtn" onclick="closeMus()">&times;</a>
+</div>
+
+</div>
+
 <script>
 var vidElement=document.getElementById('myVideo');
 var vidSources=["fract0.mp4","fract1.mp4","fract2.mp4","fract3.mp4","fract4.mp4","fract5.mp4"];
@@ -207,6 +231,12 @@ function closeInfG(){document.getElementById("InfG").style.width="0%";}
 
 function openGiga(){document.getElementById("Giga").style.width="100%";}
 function closeGiga(){document.getElementById("Giga").style.width="0%";}
+
+function openNik(){document.getElementById("Nik").style.width="100%";}
+function closeNik(){document.getElementById("Nik").style.width="0%";}
+
+function openMus(){document.getElementById("Mus").style.width="100%";}
+function closeMus(){document.getElementById("Mus").style.width="0%";}
 </script>
 </body>
 </html>
