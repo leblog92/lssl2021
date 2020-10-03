@@ -83,6 +83,8 @@ transition: 0.5s;
 #Giga{width:0%;}
 #Nik{width:0%;}
 #Mus{width:0%;}
+#Frac{width:0%;}
+#Frac3d{width:0%;}
 
 .overlay-content{
 position:relative;
@@ -127,8 +129,8 @@ color:#f1f1f1;
 	<div onclick="openGiga()"><img src="giga.png" width="150px" height="auto"></div>
 	<div onclick="openNik()"><img src="nikon.jpg" width="150px" height="auto"></div>
 	<div onclick="openMus()"><img src="museum.jpg" width="150px" height="auto"></div>
-	<div><a href="http://usefuljs.net/fractals/" target="_blank"><img src="frac.jpg" width="150px" height="auto"></a></div>
-	<div><a href="https://hirnsohle.de/test/fractalLab/" target="blank"><img src="frac3d.jpg" width="150px" height="auto"></a></div>
+	<div onclick="openFrac()"><img src="frac.jpg" width="150px" height="auto"></div>
+	<div onclick="openFrac3d()"><img src="frac3d.jpg" width="150px" height="auto"></div>
 	<!--<div><a href="https://www.mediatheque-rueilmalmaison.fr/-La-Science-se-Livre-" target="_blank"><img src="selection.jpg" width="150px" height="auto"></a></div>-->
 </div>
 
@@ -141,7 +143,7 @@ color:#f1f1f1;
 	Zoomez du bord de l'univers à la limite quantique de l'espace-temps<br>
 	et apprenez l'échelle des choses en cours de route. 
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeEch()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeEch()">&times;</a>
 </div>
 
 <div id="InfP" class="overlay">
@@ -150,16 +152,16 @@ color:#f1f1f1;
 	Si en levant les yeux au ciel il vous arrive de vous sentir petit, écrasé par le poids de l'immensité<br>
 	alors dites vous qu'il existe là, à proximité, un monde qui fait de vous de véritables géants ...
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeInfP()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeInfP()">&times;</a>
 </div>
-	
+
 <div id="InfG" class="overlay">
 <div class="overlay-content">
 	<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/MuARMr63Yoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 	Ouvrez grands les yeux. Aujourd'hui nous allons entreprendre un voyage aux confins de l'univers connu.<br>
 	Aussi loin et aussi grand qu'il est possible d'aller ...
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeInfG()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeInfG()">&times;</a>
 </div>
 
 <div id="Giga" class="overlay">
@@ -171,7 +173,8 @@ color:#f1f1f1;
 	GigaPan est un projet collaboratif entre la Carnegie Mellon University et l'<a href="https://fr.wikipedia.org/wiki/Ames_Research_Center" style="padding:0px;font-size:15px;color:#fff;display:inline;" target="_blank">Ames Research Center</a> de la NASA,<br>
 	avec le support de Google. L'objectif est de faciliter le développement de photos panoramiques composites à haute résolution.
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeGiga()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeGiga()">&times;</a>
+</div>
 
 <div id="Nik" class="overlay">
 <div class="overlay-content">
@@ -184,7 +187,8 @@ color:#f1f1f1;
 	intéressée par la microscopie et la photographie. Le concours vidéo, intitulé  Small World In Motion,<br>
 	englobe tout film ou photographie numérique en accéléré prise au microscope.
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeNik()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNik()">&times;</a>
+</div>
 
 <div id="Mus" class="overlay">
 <div class="overlay-content">
@@ -193,11 +197,32 @@ color:#f1f1f1;
 	d'explorer le monde en manipulant des objets dans un espace physique basé sur leur angle de vue.<br>
 	Pourez-vous faire tenir la lune dans la paume de votre main ?
 </div>
-<a href="javascript:void(0)" class="closebtn" onclick="closeMus()">&times;</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeMus()">&times;</a>
+</div>
+
+<div id="Frac" class="overlay">
+<div class="overlay-content">
+	<a href="http://usefuljs.net/fractals/" target="_blank">
+		<img src="" width="800px" height="auto"/><br>
+		Frac
+	</a>
+	Frac.
+</div>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeFrac()">&times;</a>
+</div>
+
+<div id="Frac3d" class="overlay">
+<div class="overlay-content">
+	<a href="http://usefuljs.net/fractals/" target="_blank">
+		<img src="" width="800px" height="auto"/><br>
+		Frac3d
+	</a>
+	Frac3d.
+</div>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeFrac3d()">&times;</a>
 </div>
 
 </div>
-
 <script>
 var vidElement=document.getElementById('myVideo');
 var vidSources=["fract0.mp4","fract1.mp4","fract2.mp4","fract3.mp4","fract4.mp4","fract5.mp4"];
@@ -237,6 +262,12 @@ function closeNik(){document.getElementById("Nik").style.width="0%";}
 
 function openMus(){document.getElementById("Mus").style.width="100%";}
 function closeMus(){document.getElementById("Mus").style.width="0%";}
+
+function openFrac(){document.getElementById("Frac").style.width="100%";}
+function closeFrac(){document.getElementById("Frac").style.width="0%";}
+
+function openFrac3d(){document.getElementById("Frac3d").style.width="100%";}
+function closeFrac3d(){document.getElementById("Frac3d").style.width="0%";}
 </script>
 </body>
 </html>
